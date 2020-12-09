@@ -58,8 +58,29 @@ Set this variable to 2 or 3, to switch either to Rinex Version 2.11 or to Rinex 
 ### Pos options
 Output of csv files with the position information (from the HPPOSLLH message).
 
-### pos
+#### pos
 Enable (1) or disable (0) the output of the UBX-NAV-HPPOSLLH message content in an output csv file.
+
+### Other messages
+All these messages are disabled by default
+
+#### clock
+Enable the csv output of NAV-CLOCK with the option "clock 1"
+
+#### dop
+Enable the csv output of NAV-DOP with the option "dop 1"
+
+#### pvt
+Enable the csv output of NAV-PVT with the option "pvt 1"
+
+#### sat
+Enable the csv output of NAV-SAT with the option "sat 1"
+
+#### signal
+Enable the csv output of NAV-SIG with the option "signal 1"
+
+#### status
+Enable the csv output of NAV-STATUS with the option "status 1"
 
 # Compilation under Linux
 Software not tested under Linux!

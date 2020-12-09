@@ -47,12 +47,12 @@ int main(int argc, char *argv[])
 	bool pos_out = false;
 
 	// various messages
-	bool clock_out;
-	bool dop_out;
-	bool pvt_out;
-	bool sat_out;
-	bool signal_out;
-	bool status_out;
+	bool clock_out = false;
+	bool dop_out = false;
+	bool pvt_out = false;
+	bool sat_out = false;
+	bool signal_out = false;
+	bool status_out = false;
 
 	////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	// reading the options
