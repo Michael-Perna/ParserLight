@@ -86,6 +86,8 @@ void UbxReader::read_any_message(std::string output_file_name)
 				int cl = registered_writers.at(i)->get_reference_header().cl;
 				int id = registered_writers.at(i)->get_reference_header().id;
 
+
+
 				if (ub_head_out.cl == cl && ub_head_out.id == id)
 				{
 					// std::cout << std::showbase << std::internal << std::setfill('0');

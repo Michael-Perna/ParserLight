@@ -5,6 +5,12 @@
 #include "OutputWriter.h"
 #include "OutputWriterPos.h"
 #include "OutputWriterRinex.h"
+#include "OutputWriterClock.h"
+#include "OutputWriterDOP.h"
+#include "OutputWriterPVT.h"
+#include "OutputWriterSat.h"
+#include "OutputWriterSignal.h"
+#include "OutputWriterStatus.h"
 
 #include "UbloxSpecs.h"
 
@@ -39,6 +45,14 @@ int main(int argc, char *argv[])
 
 	// options for position output
 	bool pos_out = false;
+
+	// various messages
+	bool clock_out;
+	bool dop_out;
+	bool pvt_out;
+	bool sat_out;
+	bool signal_out;
+	bool status_out;
 
 	////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	// reading the options
@@ -76,7 +90,25 @@ int main(int argc, char *argv[])
 		if (strcmp(argv[i], "comment") == 0) { meta_data.comment = argv[i + 1]; continue; };
 
 		// position options
-		if (strcmp(argv[i], "pos") == 0) { pos_out = check_option(argv[i + 1], "llh"); continue; };
+		if (strcmp(argv[i], "pos") == 0) { pos_out = check_option(argv[i + 1], "pos"); continue; };
+
+		// Clock output option
+		if (strcmp(argv[i], "clock") == 0) { clock_out = check_option(argv[i + 1], "clock"); continue; };
+
+		// DOP output option
+		if (strcmp(argv[i], "dop") == 0) { dop_out = check_option(argv[i + 1], "dop"); continue; };
+
+		// PVT output option
+		if (strcmp(argv[i], "pvt") == 0) { pvt_out = check_option(argv[i + 1], "pvt"); continue; };
+
+		// Sat output option
+		if (strcmp(argv[i], "sat") == 0) { sat_out = check_option(argv[i + 1], "sat"); continue; };
+
+		// Signal output option
+		if (strcmp(argv[i], "signal") == 0) { signal_out = check_option(argv[i + 1], "signal"); continue; };
+
+		// Status ouput option
+		if (strcmp(argv[i], "status") == 0) { status_out = check_option(argv[i + 1], "status"); continue; };
 
 		// unknown options
 		std::cout << argv[i] << " option unknown. Option ignored.\n";
@@ -121,12 +153,42 @@ int main(int argc, char *argv[])
 		OutputWriterRinex* output_writer_rinex = new OutputWriterRinex(mjd_valid, meta_data);
 		myReader.register_reader(output_writer_rinex);
 	}
-	
 	if (pos_out)
 	{
 		OutputWriterPos* output_writer_pos = new OutputWriterPos();
 		myReader.register_reader(output_writer_pos);
 	}
+	if (clock_out)
+	{
+		OutputWriterClock* output_writer_clock = new OutputWriterClock();
+		myReader.register_reader(output_writer_clock);
+	}
+	if (dop_out)
+	{
+		OutputWriterDOP* output_writer_dop = new OutputWriterDOP();
+		myReader.register_reader(output_writer_dop);
+	}
+	if (pvt_out)
+	{
+		OutputWriterPVT* output_writer_pvt = new OutputWriterPVT();
+		myReader.register_reader(output_writer_pvt);
+	}
+	if (sat_out)
+	{
+		OutputWriterSat* output_writer_sat = new OutputWriterSat();
+		myReader.register_reader(output_writer_sat);
+	}
+	if (signal_out)
+	{
+		OutputWriterSignal* output_writer_signal = new OutputWriterSignal();
+		myReader.register_reader(output_writer_signal);
+	}
+	if (pos_out)
+	{
+		OutputWriterStatus* output_writer_status = new OutputWriterStatus();
+		myReader.register_reader(output_writer_status);
+	}
+
 
 	////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	// processing
