@@ -86,9 +86,6 @@ void OutputWriterStatus::write_message(OutputWriterStatus::STATUS my_data) {
 	// epoch
 	sprintf(buffer, "%10.3f; ", my_data.tow);
 	file << buffer;
-
-	sprintf(buffer, "%u; ", my_data.tow);
-	file << buffer;
 	sprintf(buffer, "%u; ", my_data.gps_fix);
 	file << buffer;
 	sprintf(buffer, "%u; ", my_data.gps_fix_ok);
@@ -111,9 +108,9 @@ void OutputWriterStatus::write_message(OutputWriterStatus::STATUS my_data) {
 	file << buffer;
 	sprintf(buffer, "%u; ", my_data.carr_sol_status);
 	file << buffer;
-	sprintf(buffer, "%u; ", my_data.time_to_first_fix);
+	sprintf(buffer, "%5.3f; ", my_data.time_to_first_fix);
 	file << buffer;
-	sprintf(buffer, "%u; ", my_data.time_since_startup);
+	sprintf(buffer, "%7.3f; ", my_data.time_since_startup);
 	file << buffer;
 
 	sprintf(buffer, "\n");

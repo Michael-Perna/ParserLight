@@ -67,7 +67,7 @@ void OutputWriterSignal::store_and_write_SIGNAL(char *inbuffer)
 			temp.gnss_id = my_SIGNAL_SIG.gnssId;
 			temp.sv_id = my_SIGNAL_SIG.svId;
 			temp.sig_id = my_SIGNAL_SIG.sigId;
-			temp.freq_id = my_SIGNAL_SIG.freqId;
+			temp.freq_id = my_SIGNAL_SIG.freqId - 7;
 			temp.residual = 0.1*my_SIGNAL_SIG.prRes;
 			temp.quality = my_SIGNAL_SIG.qualityInd;
 			temp.correction_source = my_SIGNAL_SIG.corrSource;
@@ -111,13 +111,13 @@ void OutputWriterSignal::write_message(OutputWriterSignal::SIGNAL my_data) {
 	file << buffer;
 	sprintf(buffer, "%u; ", my_data.gnss_id);
 	file << buffer;
-	sprintf(buffer, "%u; ", my_data.sv_id);
+	sprintf(buffer, "%2u; ", my_data.sv_id);
 	file << buffer;
 	sprintf(buffer, "%u; ", my_data.sig_id);
 	file << buffer;
-	sprintf(buffer, "%u; ", my_data.freq_id);
+	sprintf(buffer, "%2i; ", my_data.freq_id);
 	file << buffer;
-	sprintf(buffer, "%.3f; ", my_data.residual);
+	sprintf(buffer, "%6.1f; ", my_data.residual);
 	file << buffer;
 	sprintf(buffer, "%u; ", my_data.quality);
 	file << buffer;

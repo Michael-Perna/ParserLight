@@ -82,19 +82,19 @@ void OutputWriterDOP::write_message(OutputWriterDOP::DOP my_data) {
 	file << buffer;
 
 	// DOPs
-	sprintf(buffer, "%10.3f; ", my_data.GDOP);
+	sprintf(buffer, "%6.2f; ", my_data.GDOP);
 	file << buffer;
-	sprintf(buffer, "%10.3f; ", my_data.PDOP);
+	sprintf(buffer, "%6.2f; ", my_data.PDOP);
 	file << buffer;
-	sprintf(buffer, "%10.3f; ", my_data.TDOP);
+	sprintf(buffer, "%6.2f; ", my_data.TDOP);
 	file << buffer;
-	sprintf(buffer, "%10.3f; ", my_data.VDOP);
+	sprintf(buffer, "%6.2f; ", my_data.VDOP);
 	file << buffer;
-	sprintf(buffer, "%10.3f; ", my_data.HDOP);
+	sprintf(buffer, "%6.2f; ", my_data.HDOP);
 	file << buffer;
-	sprintf(buffer, "%10.3f; ", my_data.NDOP);
+	sprintf(buffer, "%6.2f; ", my_data.NDOP);
 	file << buffer;
-	sprintf(buffer, "%10.3f; ", my_data.EDOP);
+	sprintf(buffer, "%6.2f; ", my_data.EDOP);
 	file << buffer;
 
 	sprintf(buffer, "\n");

@@ -106,21 +106,21 @@ void OutputWriterSat::write_message(OutputWriterSat::SAT my_data) {
 	sprintf(buffer, "%10.3f; ", my_data.tow);
 	file << buffer;
 	// epoch ID
-	sprintf(buffer, "%u; ", OutputWriterSat::epoch_index);
+	sprintf(buffer, "%3u; ", OutputWriterSat::epoch_index);
 	file << buffer;
 	
 	// SV infos
 	sprintf(buffer, "%u; ", my_data.gnss_id);
 	file << buffer;
-	sprintf(buffer, "%u; ", my_data.sv_id);
+	sprintf(buffer, "%2u; ", my_data.sv_id);
 	file << buffer;
-	sprintf(buffer, "%.2f; ", my_data.cno);
+	sprintf(buffer, "%2u; ", my_data.cno);
 	file << buffer;
-	sprintf(buffer, "%.2f; ", my_data.elevation);
+	sprintf(buffer, "%6.2f; ", my_data.elevation);
 	file << buffer;
-	sprintf(buffer, "%.2f; ", my_data.azimuth);
+	sprintf(buffer, "%7.2f; ", my_data.azimuth);
 	file << buffer;
-	sprintf(buffer, "%.2f; ", my_data.residual);
+	sprintf(buffer, "%6.1f; ", my_data.residual);
 	file << buffer;
 	
 	// flags
