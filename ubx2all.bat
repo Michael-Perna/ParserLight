@@ -1,0 +1,1 @@
+%~dp0\ParserLight\Release\ParserLight.exe C:\Users\Daniel\Documents\6_Code\ParserLightV2\ublox.ubx pos 1 clock 1 dop 1 pvt 1 sat 1 signal 1 status 1 wait 1
