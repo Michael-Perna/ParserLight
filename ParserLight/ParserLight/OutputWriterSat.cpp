@@ -110,6 +110,8 @@ void OutputWriterSat::write_message(OutputWriterSat::SAT my_data) {
 	file << buffer;
 	
 	// SV infos
+	sprintf(buffer, "%2u; ", my_data.numSv);
+	file << buffer;
 	sprintf(buffer, "%u; ", my_data.gnss_id);
 	file << buffer;
 	sprintf(buffer, "%2u; ", my_data.sv_id);

@@ -186,7 +186,7 @@ void OutputWriterPVT::write_message(OutputWriterPVT::PVT my_data) {
 	file << buffer;
 
 	// DOP
-	sprintf(buffer, "%6.2f;", my_data.hMSL);
+	sprintf(buffer, "%6.2f;", my_data.PDOP);
 	file << buffer;
 
 	// new line
