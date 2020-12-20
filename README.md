@@ -59,7 +59,7 @@ Set this variable to 2 or 3, to switch either to Rinex Version 2.11 or to Rinex 
 All these messages are disabled by default
 
 #### pos (NAV-HPPOSLLH)
-Enable the csv output of NAV-HPPOSLLH with the option "clock 1"
+Enable the csv output of NAV-HPPOSLLH with the option "pos 1"
 
 #### clock (NAV-CLOCK)
 Enable the csv output of NAV-CLOCK with the option "clock 1"
